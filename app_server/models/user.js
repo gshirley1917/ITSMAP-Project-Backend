@@ -1,6 +1,5 @@
 import mongoose, { Mongoose } from 'mongoose'
 import { MongooseAutoIncrementID } from 'mongoose-auto-increment-reworked';
-import workoutLogSchema from './log';
 const crypto = require('crypto');
 const Schema = mongoose.Schema;
 const jwt = require('jsonwebtoken');
@@ -21,7 +20,6 @@ const userSchema =  new Schema({
     },
     hash: String,
     salt: String,
-    logs : [workoutLogSchema]
 })
 
 //TODO store iterations, keylength, hash algorithm as variables

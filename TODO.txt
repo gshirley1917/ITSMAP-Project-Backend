@@ -1,0 +1,6 @@
+Users can see their own unique workout logs
+schema: Date, workout, displayed on calender for nice UI
+Logs below workouts
+Router endpoints
+User login/register/logout
+User authentication to add workouts/logs

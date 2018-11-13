@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('itsmap-project-backend:server');
+import app from '../app';
+var debug = require('debug')('test-app:server');
 var http = require('http');
 
 /**

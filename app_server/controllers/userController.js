@@ -1,4 +1,4 @@
-import userProgram from '../models/user';
+import userProgram from '../models/programs/user';
 require('crypto');
 
 let userController = {};

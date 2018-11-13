@@ -1,26 +1,8 @@
 import mongoose, { Mongoose } from 'mongoose'
 import { MongooseAutoIncrementID } from 'mongoose-auto-increment-reworked';
+import userSchema from '../schemas/user'
 const crypto = require('crypto');
-const Schema = mongoose.Schema;
 const jwt = require('jsonwebtoken');
-
-//User Schema Definition
-const userSchema =  new Schema({
-    firstName: {
-        type: String,
-        required: true
-    },
-    surName: {
-        type: String,
-        required: true
-    },
-    email:{
-        type: String,
-        required: true
-    },
-    hash: String,
-    salt: String,
-})
 
 //TODO store iterations, keylength, hash algorithm as variables
 var iterations = 10000;
@@ -55,7 +37,8 @@ userSchema.methods.generateJwt = function(){
 
 userSchema.plugin(MongooseAutoIncrementID.plugin, {
     modelName: 'userProgram',
-})
+});
+
 let userProgram = mongoose.model('userProgram', userSchema);
 
 export default userProgram;

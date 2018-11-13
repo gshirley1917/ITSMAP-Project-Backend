@@ -16,7 +16,6 @@ import userController from '../controllers/userController';
  * map every request to controller
  */
 
-
 router.post('/register', userController.register);
 
 router.post('/login', userController.login);

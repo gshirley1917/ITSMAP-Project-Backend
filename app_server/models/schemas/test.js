@@ -1,3 +1,4 @@
+import mongoose from  'mongoose';
 const Schema = mongoose.Schema;
 
 const testSchema = new Schema({
@@ -6,7 +7,7 @@ const testSchema = new Schema({
         required: true
     },
     score:{
-        type: Decimal128,
+        type: Number,
         required: true
     }
 });

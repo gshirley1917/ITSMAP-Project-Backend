@@ -1,5 +1,7 @@
+import mongoose from  'mongoose';
 import studentSchema from  '../schemas/student';
 import testSchema from '../schemas/test';
+import { MongooseAutoIncrementID } from 'mongoose-auto-increment-reworked';
 
 studentSchema.methods.addNewTest = function(testName, testScore) {
     for(i = 0; i < this.tests.length; i++){
@@ -36,3 +38,11 @@ studentSchema.methods.getTotalScore = function(){
     }
     return score;
 }
+
+studentSchema.plugin(MongooseAutoIncrementID.plugin, {
+    modelName : 'studentProgram'
+});
+
+let studentProgram = mongoose.model('studentProgram', studentSchema);
+
+export default studentProgram;

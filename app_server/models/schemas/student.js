@@ -1,3 +1,4 @@
+import mongoose from  'mongoose';
 const Schema = mongoose.Schema;
 import testSchema from './test'
 
@@ -14,8 +15,8 @@ const studentSchema = new Schema({
         type: String,
         required: true
     },
-    studentID:{
-        type: Number,
+    id:{
+        type: String,
         requried: true
     },
     tests: [testSchema]
